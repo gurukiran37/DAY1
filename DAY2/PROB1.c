@@ -1,22 +1,25 @@
 #include <stdio.h>
-float calculate(float bill) 
+int factorial(int n) 
 {
-    float discount = 0.0;
-    if(bill>=500 && bill<=1000) 
+    if (n == 0 || n == 1) 
     {
-        discount = 0.10;
-    } else if(bill>1000) 
-    {
-        discount = 0.20;
+        return 1;
+    } else {
+        return n * factorial(n - 1); 
     }
-    return bill*(1-discount); 
 }
 int main() 
 {
-    float bill;
-    printf("Enter total bill amount:");
-    scanf("%f", &bill);
-    float final= calculate(bill);
-    printf("Final Payable Amount: ₹%.2f\n", final);
-    return 0;
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    if (num < 0) 
+    {
+        printf("Factorial is not defined for negative numbers.\n");
+    } 
+    else {
+     int result = factorial(num);
+     printf("Factorial of %d is %d\n", num,result);
+    }
+return 0;
 }
