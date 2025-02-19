@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-typedef struct
+typedef strucT
 {
     char name[50];
     int age;
